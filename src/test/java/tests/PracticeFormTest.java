@@ -10,7 +10,7 @@ public class PracticeFormTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Tag("simple")
+    @Tag("remote")
     @Test
     void fillFormTest() {
 
