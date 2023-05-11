@@ -1,5 +1,7 @@
 package tests;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -12,6 +14,7 @@ public class PracticeFormTest extends TestBase {
 
     @Tag("remote")
     @Test
+    @DisplayName("Проверка заполнения формы")
     void fillFormTest() {
 
         registrationPage.openPage()
@@ -41,5 +44,13 @@ public class PracticeFormTest extends TestBase {
                 .verifyResult("Picture", userFile)
                 .verifyResult("Address", userAddress)
                 .verifyResult("State and City", userState + " " + userCity);
+    }
+
+    @Tag("remote")
+    @Test
+    @DisplayName("Специально настроенный на fail тест")
+    void checkFailResult() {
+        boolean a = false;
+        Assertions.assertTrue(a);
     }
 }
