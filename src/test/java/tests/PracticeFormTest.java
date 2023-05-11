@@ -1,9 +1,6 @@
 package tests;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pages.RegistrationPage;
 
 import static utils.FakerData.*;
@@ -48,8 +45,17 @@ public class PracticeFormTest extends TestBase {
 
     @Tag("remote")
     @Test
-    @DisplayName("Специально настроенный на fail тест")
+    @DisplayName("Специально настроенный на failed тест")
     void checkFailResult() {
+        boolean a = false;
+        Assertions.assertTrue(a);
+    }
+
+    @Disabled
+    @Tag("remote")
+    @Test
+    @DisplayName("Специально настроенный на skipped тест")
+    void checkSkippedResult() {
         boolean a = false;
         Assertions.assertTrue(a);
     }
